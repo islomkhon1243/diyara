@@ -1,0 +1,172 @@
+:root {
+  --bg: #fff6f6;
+  --card: #ffffff;
+  --text: #2a2a2a;
+  --accent: #f08a8a;
+  --soft: #fde2e2;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.section {
+  padding: 90px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.roles {
+  margin: 25px 0 45px;
+  opacity: 0.7;
+}
+
+.btn {
+  padding: 14px 32px;
+  font-size: 1rem;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #e57373;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  padding: 26px;
+  border-radius: 16px;
+  cursor: default;
+  transition: 0.3s;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card span {
+  display: block;
+  margin-top: 12px;
+  font-weight: normal;
+  opacity: 0.75;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.quiz button {
+  display: block;
+  margin: 12px auto;
+  padding: 14px 24px;
+  border-radius: 22px;
+  border: none;
+  background: var(--soft);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quiz button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.steps {
+  text-align: left;
+  max-width: 420px;
+  margin: auto;
+}
+
+.steps li {
+  margin-bottom: 10px;
+}
+
+.quote {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.hidden {
+  display: none;
+}
+
+.final ul {
+  list-style: none;
+  padding: 0;
+}
+
+.final li {
+  margin-bottom: 8px;
+}
+
+.homework {
+  margin: 35px 0;
+  font-size: 1.25rem;
+}
+
+/* hearts */
+.heart {
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  color: var(--accent);
+  animation: floatUp 4s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}

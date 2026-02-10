@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>A Small Lesson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="section hero">
+    <h1 class="typewriter">Today's lesson</h1>
+    <p class="subtitle">How a small idea became something for you</p>
+    <p class="roles">
+      Teacher: You <br>
+      Someone who wanted to make you smile: Me
+    </p>
+    <button class="btn" onclick="scrollToSection('vocabulary')">
+      Start the lesson
+    </button>
+  </section>
+
+  <!-- VOCABULARY -->
+  <section class="section" id="vocabulary">
+    <h2>Vocabulary</h2>
+    <div class="cards">
+      <div class="card">
+        curiosity
+        <span>because you made me curious very quickly</span>
+      </div>
+      <div class="card">
+        attention
+        <span>when someone actually listens</span>
+      </div>
+      <div class="card">
+        warmth
+        <span>the feeling I get talking to you</span>
+      </div>
+      <div class="card">
+        smile
+        <span>the main goal of this website</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRAMMAR -->
+  <section class="section">
+    <h2>Grammar practice</h2>
+    <p>Choose the correct sentence:</p>
+
+    <div class="quiz">
+      <button onclick="checkAnswer(false)">
+        I made this website to impress you
+      </button>
+      <button onclick="checkAnswer(true)">
+        I have made this website to impress you
+      </button>
+    </div>
+
+    <p id="quiz-result"></p>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <h2>How I usually create things</h2>
+    <ol class="steps">
+      <li>An idea appears</li>
+      <li>I overthink it</li>
+      <li>I write code</li>
+      <li>I simplify</li>
+      <li>If it works — I smile (a lot)</li>
+    </ol>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="section quote">
+    <p>
+      I could just say that I'm a developer.<br><br>
+      But sometimes it's nicer to show it instead.<br><br>
+      So I made this small website<br>
+      just to remind you that<br>
+      someone thought about you today.
+    </p>
+  </section>
+
+  <!-- TURKISH -->
+  <section class="section">
+    <button class="btn ghost" onclick="toggleTurkish()">
+      One more thing
+    </button>
+    <p id="turkish" class="hidden">
+      Küçük bir sürpriz.<br><br>
+      Senin için.<br><br>
+      Çünkü bazen birini gülümsetmek,<br>
+      her şeyden daha değerlidir.
+    </p>
+  </section>
+
+  <!-- FINAL -->
+  <section class="section final">
+    <h2>Lesson summary</h2>
+    <ul>
+      <li>You teach English beautifully</li>
+      <li>I write code with care</li>
+      <li>This website exists because of you</li>
+    </ul>
+
+    <p class="homework">
+      Homework:<br>
+      Let me take you for a coffee?
+    </p>
+
+    <button class="btn" onclick="finishLesson()">
+      Accept homework ☕
+    </button>
+
+    <p id="final-result"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>A Small Lesson</title>
+  <title>Ты выйдешь за меня?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,113 +10,41 @@
 
   <!-- HERO -->
   <section class="section hero">
-    <h1 class="typewriter">Today's lesson</h1>
-    <p class="subtitle">How a small idea became something for you</p>
-    <p class="roles">
-      Teacher: You <br>
-      Someone who wanted to make you smile: Me
-    </p>
-    <button class="btn" onclick="scrollToSection('vocabulary')">
-      Start the lesson
+    <h1 class="typewriter" data-text="У меня есть вопрос к тебе…"> </h1>
+    <button class="btn" onclick="scrollToSection('memories')">
+      Открой сюрприз
     </button>
   </section>
 
-  <!-- VOCABULARY -->
-  <section class="section" id="vocabulary">
-    <h2>Vocabulary</h2>
+  <!-- MEMORIES -->
+  <section class="section" id="memories">
+    <h2>Каждый момент с тобой…</h2>
     <div class="cards">
-      <div class="card">
-        curiosity
-        <span>because you made me curious very quickly</span>
-      </div>
-      <div class="card">
-        attention
-        <span>when someone actually listens</span>
-      </div>
-      <div class="card">
-        warmth
-        <span>the feeling I get talking to you</span>
-      </div>
-      <div class="card">
-        smile
-        <span>the main goal of this website</span>
-      </div>
+      <div class="card">Наш первый разговор</div>
+      <div class="card">Твои улыбки</div>
+      <div class="card">Каждый день вместе</div>
+      <div class="card">Ты делаешь меня счастливым</div>
     </div>
+    <button class="btn" onclick="scrollToSection('quote')">Продолжить</button>
   </section>
 
-  <!-- GRAMMAR -->
-  <section class="section">
-    <h2>Grammar practice</h2>
-    <p>Choose the correct sentence:</p>
-
-    <div class="quiz">
-      <button onclick="checkAnswer(false)">
-        I made this website to impress you
-      </button>
-      <button onclick="checkAnswer(true)">
-        I have made this website to impress you
-      </button>
-    </div>
-
-    <p id="quiz-result"></p>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="section">
-    <h2>How I usually create things</h2>
-    <ol class="steps">
-      <li>An idea appears</li>
-      <li>I overthink it</li>
-      <li>I write code</li>
-      <li>I simplify</li>
-      <li>If it works — I smile (a lot)</li>
-    </ol>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="section quote">
+  <!-- LOVE QUOTE -->
+  <section class="section quote" id="quote">
     <p>
-      I could just say that I'm a developer.<br><br>
-      But sometimes it's nicer to show it instead.<br><br>
-      So I made this small website<br>
-      just to remind you that<br>
-      someone thought about you today.
+      Я люблю тебя больше, чем слова могут сказать.<br>
+      Ты — мое всё, и я хочу провести с тобой всю жизнь.
     </p>
+    <button class="btn" onclick="scrollToSection('proposal')">Далее</button>
   </section>
 
-  <!-- TURKISH -->
-  <section class="section">
-    <button class="btn ghost" onclick="toggleTurkish()">
-      One more thing
-    </button>
-    <p id="turkish" class="hidden">
-      Küçük bir sürpriz.<br><br>
-      Senin için.<br><br>
-      Çünkü bazen birini gülümsetmek,<br>
-      her şeyden daha değerlidir.
-    </p>
+  <!-- PROPOSAL -->
+  <section class="section final" id="proposal">
+    <h2>Ты выйдешь за меня?</h2>
+    <button class="btn big" onclick="acceptProposal()">Да 💍</button>
+    <p id="result"></p>
   </section>
 
-  <!-- FINAL -->
-  <section class="section final">
-    <h2>Lesson summary</h2>
-    <ul>
-      <li>You teach English beautifully</li>
-      <li>I write code with care</li>
-      <li>This website exists because of you</li>
-    </ul>
-
-    <p class="homework">
-      Homework:<br>
-      Let me take you for a coffee?
-    </p>
-
-    <button class="btn" onclick="finishLesson()">
-      Accept homework ☕
-    </button>
-
-    <p id="final-result"></p>
-  </section>
+  <canvas id="confetti"></canvas>
 
   <script src="script.js"></script>
 </body>

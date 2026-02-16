@@ -1,172 +1,167 @@
-:root {
-  --bg: #fff6f6;
-  --card: #ffffff;
-  --text: #2a2a2a;
-  --accent: #f08a8a;
-  --soft: #fde2e2;
-}
-
+/* Reset и базовые стили */
 * {
   box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
-}
-
-body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
+  padding: 0;
 }
 
+html, body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+  color: #333;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Секции */
 .section {
-  padding: 90px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-.hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+/* Типографика печатной машинки */
+.typewriter {
+  display: inline-block;
+  font-size: 2.2em;
+  line-height: 1.3em;
+  max-width: 90%;
+  margin-bottom: 20px;
+  text-align: center;
+  border-right: 0.15em solid #333;
+  white-space: pre-wrap; /* разрешаем перенос строк */
+  overflow: hidden;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  opacity: 0.85;
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #333 }
 }
 
-.roles {
-  margin: 25px 0 45px;
-  opacity: 0.7;
-}
-
+/* Кнопки */
 .btn {
-  padding: 14px 32px;
-  font-size: 1rem;
+  background: #ff6b81;
+  color: white;
   border: none;
-  background: var(--accent);
-  color: #fff;
-  cursor: pointer;
+  padding: 15px 0;
+  margin: 15px 0;
+  font-size: 1.4em;
   border-radius: 30px;
-  transition: 0.3s;
+  cursor: pointer;
+  width: 90%;
+  max-width: 350px;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  background: #e57373;
+  background: #ff3d55;
+  transform: scale(1.05);
 }
 
-.btn.ghost {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+.btn.big {
+  font-size: 2em;
+  padding: 20px 0;
 }
 
+/* Карточки воспоминаний */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 90%;
+  margin: 20px 0;
 }
 
 .card {
-  background: var(--card);
-  padding: 26px;
-  border-radius: 16px;
-  cursor: default;
-  transition: 0.3s;
-  font-weight: 600;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.card span {
-  display: block;
-  margin-top: 12px;
-  font-weight: normal;
-  opacity: 0.75;
+  background: #fff0f5;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-size: 1.2em;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
-.quiz button {
-  display: block;
-  margin: 12px auto;
-  padding: 14px 24px;
-  border-radius: 22px;
-  border: none;
-  background: var(--soft);
-  cursor: pointer;
-  transition: 0.3s;
+/* Любовная цитата */
+.quote p {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  max-width: 95%;
+  margin: 0 auto 20px;
 }
 
-.quiz button:hover {
-  background: var(--accent);
-  color: #fff;
+/* Финальный результат */
+#result {
+  margin-top: 20px;
+  font-size: 2em;
+  color: #ff3d55;
 }
 
-.steps {
-  text-align: left;
-  max-width: 420px;
-  margin: auto;
-}
-
-.steps li {
-  margin-bottom: 10px;
-}
-
-.quote {
-  font-style: italic;
-  opacity: 0.9;
-}
-
-.hidden {
-  display: none;
-}
-
-.final ul {
-  list-style: none;
-  padding: 0;
-}
-
-.final li {
-  margin-bottom: 8px;
-}
-
-.homework {
-  margin: 35px 0;
-  font-size: 1.25rem;
-}
-
-/* hearts */
-.heart {
+/* Canvas для конфетти */
+#confetti {
   position: fixed;
-  bottom: 0;
-  font-size: 20px;
-  color: var(--accent);
-  animation: floatUp 4s linear forwards;
   pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
 }
 
-@keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 1;
+/* Медиазапросы для телефонов */
+@media (min-width: 480px) {
+  .typewriter {
+    font-size: 2.2em;
   }
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
+
+  .btn {
+    font-size: 1.6em;
+    max-width: 300px;
+  }
+
+  .card {
+    font-size: 1.3em;
+  }
+
+  .quote p {
+    font-size: 1.7em;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 200px;
+  }
+
+  .typewriter {
+    font-size: 2.5em;
+  }
+
+  .btn.big {
+    font-size: 2.5em;
+    max-width: 400px;
   }
 }

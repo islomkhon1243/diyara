@@ -1,51 +1,310 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
   <meta charset="UTF-8" />
-  <title>Ты выйдешь за меня?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diyara uchun | Tug‘ilgan kun tabrigi</title>
+  <meta name="description" content="Diyara uchun maxsus sevgi va tug‘ilgan kun sayti" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+  <div class="bg-blur bg-blur-3"></div>
 
-  <!-- HERO -->
-  <section class="section hero">
-    <h1 class="typewriter" data-text="У меня есть вопрос к тебе…"> </h1>
-    <button class="btn" onclick="scrollToSection('memories')">
-      Открой сюрприз
-    </button>
-  </section>
+  <canvas id="petals"></canvas>
+  <div class="cursor-light"></div>
 
-  <!-- MEMORIES -->
-  <section class="section" id="memories">
-    <h2>Каждый момент с тобой…</h2>
-    <div class="cards">
-      <div class="card">Наш первый разговор</div>
-      <div class="card">Твои улыбки</div>
-      <div class="card">Каждый день вместе</div>
-      <div class="card">Ты делаешь меня счастливым</div>
+  <header class="hero">
+    <nav class="nav">
+      <div class="nav__logo">D ✦ I</div>
+	  <button class="music-btn" id="musicToggle">♫ Sevgimizni qo'shig'i</button>
+      <div class="nav__text">21.04.2003 — mening eng go‘zal baxtim</div>
+    </nav>
+
+    <div class="hero__card reveal">
+      <div class="hero__badge">Tug‘ilgan kuning bilan, Diyaram</div>
+
+      <h1 class="hero__title">
+        Sen mening qalbimdagi
+        <span class="accent">eng go‘zal nursan</span>
+      </h1>
+
+      <p class="hero__subtitle" id="typewriter"></p>
+
+      <div class="hero__mini-note">
+        <span>Blue like your soul ✦</span>
+        <span>Canım, iyi ki doğdun ✦</span>
+        <span>Sevgi bilan, Islomkhon ♡</span>
+      </div>
     </div>
-    <button class="btn" onclick="scrollToSection('quote')">Продолжить</button>
-  </section>
 
-  <!-- LOVE QUOTE -->
-  <section class="section quote" id="quote">
-    <p>
-      Я люблю тебя больше, чем слова могут сказать.<br>
-      Ты — мое всё, и я хочу провести с тобой всю жизнь.
-    </p>
-    <button class="btn" onclick="scrollToSection('proposal')">Далее</button>
-  </section>
+    <div class="hero__floating">
+      <div class="floating-heart heart-1">♡</div>
+      <div class="floating-heart heart-2">♥</div>
+      <div class="floating-heart heart-3">✦</div>
+      <div class="floating-heart heart-4">♡</div>
+    </div>
+  </header>
 
-  <!-- PROPOSAL -->
-  <section class="section final" id="proposal">
-    <h2>Ты выйдешь за меня?</h2>
-    <button class="btn big" onclick="acceptProposal()">Да 💍</button>
-    <p id="result"></p>
-  </section>
+  <main>
+    <section class="section reveal" id="about">
+      <div class="section__header">
+        <span class="section__eyebrow">Sen haqingda</span>
+        <h2>Diyara — faqat chiroyli qiz emas,  
+          <span class="accent">butun boshli qiziq</span>
+        </h2>
+      </div>
 
-  <canvas id="confetti"></canvas>
+      <div class="grid-3">
+        <article class="soft-card">
+          <div class="soft-card__icon">🎓</div>
+          <h3>Zakovatli</h3>
+          <p>
+            Sen maktabni <strong>“Oltin belgi”</strong> bilan tugatding. Bu faqat baho emas,
+            bu sening mehnating, sabring va kuchli irodangning isboti.
+          </p>
+        </article>
+
+        <article class="soft-card">
+          <div class="soft-card__icon">🌍</div>
+          <h3>Ko‘p tillilik</h3>
+          <p>
+            Sen o‘zbek, qozoq, rus, turk va ingliz tillarini bilasan.
+            Har bir tiling go‘yo sening qalbingdagi yana bir go‘zal eshikdek.
+          </p>
+        </article>
+
+        <article class="soft-card">
+          <div class="soft-card__icon">📚</div>
+          <h3>Mehrli ustoz</h3>
+          <p>
+            Hozir sen maktabda <strong>ingliz tili o‘qituvchisi</strong> bo‘lib ishlayapsan.
+            Sen bolalarga nafaqat til, balki nur, tarbiya va orzu ham ulashyapsan.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="story">
+      <div class="section__header">
+        <span class="section__eyebrow">Sening yo‘ling</span>
+        <h2>Orzudan maqsadga,  
+          <span class="accent">maqsaddan chiroyli hayotga</span>
+        </h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3>21.04.2003</h3>
+            <p>Bu dunyoga nozik qalbli, aqlli va go‘zal bir qiz keldi — uning ismi Diyara edi.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3>Maktab davri</h3>
+            <p>Sen “Oltin belgi” darajasiga chiqqan qizsan. Sening yutug‘ing tasodif emas, mehnat mevasi.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3>Turkiston</h3>
+            <p>Sen universitetga Turkistonda o‘qishga kirding. Bu ham sening orzular sari katta qadaming edi.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <h3>Bugun</h3>
+            <p>Bugun sen ustozsan. Va men uchun — eng qadrli, eng suyukli, eng bebaho insonsan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	<section class="section reveal" id="photos">
+	  <div class="section__header">
+		<span class="section__eyebrow">Bizning lahzalarimiz</span>
+		<h2>Suratlarda qolgan  
+		  <span class="accent">eng go‘zal onlar</span>
+		</h2>
+	  </div>
+
+	  <div class="photo-gallery">
+		<div class="photo-card"><img src="images/photo1.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo2.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo3.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo4.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo5.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo6.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo7.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo8.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo9.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo10.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo11.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo12.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo13.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo14.jpg" alt=""></div>
+		<div class="photo-card"><img src="images/photo15.jpg" alt=""></div>
+	  </div>
+	</section>
+
+    <section class="section reveal" id="qualities">
+      <div class="section__header">
+        <span class="section__eyebrow">Nega seni sevaman</span>
+        <h2>Qalbimdagi  
+          <span class="accent">eng samimiy so‘zlar</span>
+        </h2>
+      </div>
+
+      <div class="love-grid">
+        <div class="love-card">
+          <h3>Sening mehring</h3>
+          <p>
+            Sen bilan gaplashganimda qalbim tinchlanadi. Sening borligingning o‘zi menga taskin.
+          </p>
+        </div>
+
+        <div class="love-card">
+          <h3>Sening odobing</h3>
+          <p>
+            Sen go‘zallik va hayo uyg‘unlashgan qizsan. Senda nafosat bor, samimiyat bor, qalb bor.
+          </p>
+        </div>
+
+        <div class="love-card">
+          <h3>Sening kuching</h3>
+          <p>
+            Sen nozik ko‘rinsang ham, ichingda katta iroda bor. Men shu jihatingga hayron qolaman.
+          </p>
+        </div>
+
+        <div class="love-card">
+          <h3>Sening oilaparvarliging</h3>
+          <p>
+            Sen akang, singling va ukang uchun mehrli opa-singilsan. Oilaga bo‘lgan muhabbating seni yanada go‘zal qiladi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="languages">
+      <div class="section__header">
+        <span class="section__eyebrow">Senga bag‘ishlangan tillar</span>
+        <h2>Bir qalb,  
+          <span class="accent">bir nechta go‘zal ohang</span>
+        </h2>
+      </div>
+
+      <div class="quote-grid">
+        <div class="quote-card">
+          <span class="quote-card__lang">O‘zbekcha</span>
+          <p>Sen mening hayotimdagi eng pokiza va eng qadrli insonsan.</p>
+        </div>
+
+        <div class="quote-card">
+          <span class="quote-card__lang">Türkçe</span>
+          <p>Canım Diyara, sen benim kalbimin en güzel yerisin.</p>
+        </div>
+
+        <div class="quote-card">
+          <span class="quote-card__lang">Русский</span>
+          <p>Ты для меня не просто любимая, ты мой покой, моя радость и моя гордость.</p>
+        </div>
+
+        <div class="quote-card">
+          <span class="quote-card__lang">English</span>
+          <p>You are the softest light my heart has ever known.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="future">
+      <div class="section__header">
+        <span class="section__eyebrow">Biz haqimizda</span>
+        <h2>6-iyun —  
+          <span class="accent">bizning yangi sahifamiz</span>
+        </h2>
+      </div>
+
+      <div class="future-card">
+        <p>
+          Men — <strong>Islomkhon</strong>, bugun bu saytda senga bir narsani yana aytmoqchiman:
+          men seni juda qattiq sevaman.
+        </p>
+        <p>
+          Men seni qadrlayman. Sening tabassumingni, orzularingni, mehnatingni,
+          qalbingning pokligini va hayotingdagi har bir yaxshi fazilatingni qadrlayman.
+        </p>
+        <p>
+          Biz <strong>6-iyun</strong> kuni yangi hayot sari qadam qo‘yamiz.
+          Men senga faqat bugun emas, butun umr mehr berishni xohlayman.
+        </p>
+        <p class="future-card__final">
+          Sen bilan oddiy kunlar ham bayramga aylanadi.
+        </p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="letter">
+      <div class="section__header">
+        <span class="section__eyebrow">Eng muhim maktub</span>
+        <h2>Qalbimdan senga,  
+          <span class="accent">Diyara</span>
+        </h2>
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-card__shine"></div>
+
+        <p>
+          Tug‘ilgan kuning bilan, mening go‘zal Diyaram.
+        </p>
+        <p>
+          Sen 2003-yil 21-aprel kuni tug‘ilgan bo‘lsang, menimcha shu kunda osmon bu dunyoga
+          eng nozik, eng oqila va eng mehrli qizlardan birini tuhfa qilgan.
+        </p>
+        <p>
+          Sening hayotingdagi har bir yutug‘ing meni quvontiradi:
+          “Oltin belgi”, universitet, ustozlik, tillar, oilangga bo‘lgan muhabbating —
+          bularning hammasi sening naqadar betakror inson ekaningni ko‘rsatadi.
+        </p>
+        <p>
+          Men seni faqat sevibgina emas.
+          Men seni hurmat qilaman. Men seni qadrlayman.
+          Men seni yo‘qotib qo‘yishni emas, butun umr avaylab yashashni xohlayman.
+        </p>
+        <p>
+          Sen mening duolarimdagi ism, qalbimdagi eng chiroyli his, kelajagimdagi eng muhim insonsan.
+        </p>
+        <p>
+          Yaxshiyam tug‘ilgansan.  
+          İyi ki varsın.  
+          Happy Birthday, my love.
+        </p>
+
+        <div class="signature">Doim seniki, Islomkhon ♡</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="heartsContainer"></div>
+  <audio id="bgMusic" loop preload="auto">
+	  <source src="music.mp3" type="audio/mpeg">
+	  Sizning brauzeringiz audio elementni qo‘llab-quvvatlamaydi.
+	</audio>
 
   <script src="script.js"></script>
+  
 </body>
 </html>

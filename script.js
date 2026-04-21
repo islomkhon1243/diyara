@@ -40,11 +40,27 @@ if (revealItems.length) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, {
+    threshold: 0.02,
+    rootMargin: "0px 0px -40px 0px"
+  });
 
   revealItems.forEach((item) => observer.observe(item));
+
+  // запасной вариант: если что-то не отработало на мобилке
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      revealItems.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 1.15) {
+          item.classList.add("visible");
+        }
+      });
+    }, 300);
+  });
 }
 
 /* hearts */
